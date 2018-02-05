@@ -12,27 +12,9 @@ def create_project_hash
       image_link: project.css("div.project-thumbnail a img").attribute("src").value,
       description: project.css("p.bbcard_blurb").text,
       location: project.css("ul.project-meta span.location-name").text,
-      percent_funded: project.css("ul.project-stats .fist.funded strong").text.gsub("%", "").to_i      
+      percent_funded: project.css("ul.project-stats .fist.funded strong").text.gsub("%", "").to_i
     }
   end
 
   projects
 end
-
-create_project_hash
-
-
-#:projects => {
-#  "My Great Project"  => {
-#    :image_link => "Image Link",
-#    :description => "Description",
-#    :location => "Location",
-#    :percent_funded => "Percent Funded"
-#  },
-#  "Another Great Project" => {
-#    :image_link => "Image Link",
-#    :description => "Description",
-#    :location => "Location",
-#    :percent_funded => "Percent Funded"
-#  }
-#}
